@@ -1,0 +1,430 @@
+/* Basic reset for a fresh start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes managing element sizes much easier */
+}
+
+/* Overall page styling */
+body {
+    font-family: 'Quicksand', sans-serif; /* A warm and friendly font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* A very light gray background */
+    /* A subtle background pattern/image */
+    background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23e0e0e0" fill-opacity="0.4" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: repeat;
+    background-attachment: fixed; /* Keeps background fixed when scrolling */
+}
+
+/* Header and navigation bar */
+header {
+    background-color: #66b3ff; /* A cheerful blue */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Stays at the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Makes sure it's always on top */
+}
+
+nav ul {
+    list-style: none; /* No dots for list items */
+    display: flex; /* Arrange navigation links horizontally */
+    justify-content: center; /* Center them */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 18px; /* Spacing between links */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* No underline */
+    padding: 8px 12px;
+    border-radius: 20px; /* Nicely rounded buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    font-weight: 500;
+}
+
+/* Link states: what they look like when hovered, clicked, etc. */
+nav ul li a:link,
+nav ul li a:visited {
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: #4da3ff; /* Lighter blue on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+nav ul li a:active {
+    background-color: #3385ff; /* Even darker on click */
+    transform: translateY(0);
+}
+
+/* Main content sections layout */
+section {
+    padding: 40px 25px;
+    margin: 25px auto; /* Center sections with some space */
+    background-color: white;
+    border-radius: 12px; /* Nicely rounded corners for sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* A soft shadow */
+    max-width: 900px; /* Keep content readable on wide screens */
+}
+
+/* Headings styles */
+h1.main-heading { /* Specific style for the main H1 */
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0; /* A simple line below headings */
+}
+
+h3 {
+    text-align: left;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.5em;
+}
+
+p {
+    margin-bottom: 15px;
+    letter-spacing: 0.2px; /* Just a tiny bit of spacing */
+    line-height: 1.7; /* Good for readability */
+}
+
+/* Styling for content "cards" (like the welcome banner or forms) */
+.card {
+    background-color: #f0f8ff; /* A very light sky blue */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #cceeff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Inner shadow for depth */
+}
+
+/* Highlighted text for special offers */
+.highlight-text {
+    color: #e63946; /* A pop of reddish color */
+    font-weight: 700;
+    background-color: rgba(255, 255, 0, 0.1); /* Very subtle yellow background */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* About Us image */
+.about-image {
+    max-width: 250px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid #66b3ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Ensures images look good even if slightly different sizes */
+}
+
+
+/* Event images in the table */
+.event-thumbnail {
+    max-width: 150px; /* Set a maximum width for thumbnails */
+    height: 100px; /* Fixed height for consistency in table */
+    border: 3px solid #66b3ff; /* Blue border */
+    border-radius: 8px; /* Slightly rounded */
+    padding: 4px;
+    display: block; /* Center image */
+    margin: 0 auto 10px;
+    object-fit: cover; /* Ensures images look good even if slightly different sizes */
+}
+
+/* Table styling for event highlights */
+.event-highlights-table {
+    width: 100%;
+    border-collapse: separate; /* Use separate to allow border-radius */
+    border-spacing: 0;
+    margin-top: 25px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Important for border-radius on tables */
+}
+
+.event-highlights-table th,
+.event-highlights-table td {
+    border: 1px solid #eee; /* Lighter border for cells */
+    padding: 15px 10px;
+    vertical-align: middle;
+}
+
+.event-highlights-table th {
+    background-color: #87CEEB; /* A light sky blue for table headers */
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Zebra striping for table rows */
+.event-highlights-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.event-highlights-table tbody tr:hover {
+    background-color: #e9f5ff; /* Light blue on hover */
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between form elements */
+}
+
+form label {
+    font-weight: 500;
+    margin-top: 8px; /* More space above labels */
+    color: #444;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly rounded inputs */
+    width: 100%;
+    outline: none; /* Remove default blue outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #66b3ff; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(102, 179, 255, 0.3); /* Soft blue glow */
+}
+
+/* Error messages for form validation */
+.error-feedback {
+    color: #e63946; /* Red for errors */
+    font-size: 0.9em;
+    margin-top: -10px; /* Pulls it closer to the input */
+    display: block;
+}
+
+/* General info messages */
+.info-message {
+    font-size: 0.95em;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50; /* A friendly green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Very rounded, pill-shaped */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Nicer shadow */
+    align-self: center; /* Center buttons within their flex container */
+    margin-top: 20px;
+    max-width: 250px; /* Prevent them from being too wide */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #39823c;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific button styles */
+.submit-button {
+    background-color: #66b3ff; /* Blue for primary actions */
+}
+.submit-button:hover {
+    background-color: #4da3ff;
+}
+
+.clear-button {
+    background-color: #ff8c66; /* Orange for 'clear' or 'danger' actions */
+}
+.clear-button:hover {
+    background-color: #ff7247;
+}
+
+
+/* Video player styling */
+#promoVideo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 25px auto;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: #e0e0e0;
+    margin-top: 40px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #98fb98; /* A nice light green for footer links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #76e376;
+}
+
+/* About Us content with Flexbox for simple side-by-side layout */
+.about-content {
+    display: flex;
+    flex-direction: column; /* Default stack on small screens */
+    align-items: center;
+    gap: 25px; /* Space between image and text */
+    text-align: center; /* Center text by default */
+}
+
+
+
+/* Multi-column layout for a "news" section (example) */
+.news-article {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid #dcdcdc; /* Lighter rule */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+}
+
+/* Using visibility: hidden vs. display: none for example */
+/* Uncomment these in HTML to see their effect */
+/* .hidden-element {
+    visibility: hidden;
+}
+
+.display-none-element {
+    display: none;
+} */
+
+/* Responsive Web Design with Media Queries */
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 25px 15px;
+        margin: 15px auto;
+    }
+
+    h1.main-heading {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .event-thumbnail {
+        max-width: 120px; /* Even smaller on mobile */
+        height: 80px;
+    }
+
+    .event-highlights-table th,
+    .event-highlights-table td {
+        font-size: 0.9em;
+        padding: 10px 5px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Ensure stacked on small screens */
+    }
+
+    .news-article {
+        column-count: 1; /* Single column on smaller screens */
+        column-gap: 0;
+        column-rule: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* For very small screens (mobile phones) */
+@media (max-width: 480px) {
+    section {
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    h1.main-heading {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .event-highlights-table {
+        font-size: 0.8em;
+    }
+    .event-highlights-table th, .event-highlights-table td {
+        padding: 8px;
+    }
+
+    form input, form select, form textarea {
+        padding: 10px;
+    }
+}
+
+/* A subtle hover effect for form labels, giving them a personal touch */
+form label:hover {
+    color: #007bff;
+    text-shadow: 0 0 2px rgba(0,123,255,0.2);
+}

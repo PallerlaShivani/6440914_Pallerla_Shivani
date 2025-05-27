@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Friendly Community Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#register">Join Us!</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="help.html" target="_blank">Need Help?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1 class="main-heading">Welcome to Our Community Hub!</h1>
+            <div id="welcomeBanner" class="card">
+                <h2>Finding Fun Local Events Made Easy</h2>
+                <p>Hey there! This is your spot to discover cool stuff happening right in our neighborhood. We're all about bringing people together.</p>
+                <p><span class="highlight-text">Psst! First-time registrants get a little welcome surprise!</span></p>
+            </div>
+            <p>Ready to jump in? Browse events, sign up, and connect with awesome folks around you.</p>
+        </section>
+
+        <section id="about">
+            <h2>What We're All About</h2>
+            <div class="card about-content">
+                <img src="pictures/image1.jpg" alt="Diverse group of people smiling and interacting" title="Community Spirit" class="about-image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/98FB98/FFFFFF?text=Image+Failed';">
+                <div>
+                    <p>We believe a strong community is a happy one. Our goal is to make it super simple for everyone to find and participate in local activities, workshops, and gatherings.</p>
+                    <p>From lively festivals to quiet book clubs, there's something for everyone. Come on board and help us make our community even better!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Our Latest Happenings</h2>
+            <p>Take a look at what's coming up and some past favorites:</p>
+
+            <table class="event-highlights-table">
+                <caption>Memories from Past Events</caption>
+                <thead>
+                    <tr>
+                        <th>Event Snapshot</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="pictures/eventimage.jpg" alt="People enjoying a summer fair with rides and food stalls" title="A sunny summer fair day!" class="event-thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/150x100/FFDDC1/800000?text=Image+Failed';">
+                            <p>Summer Community Fair</p>
+                        </td>
+                        <td>July 20, 2024</td>
+                        <td>Town Green</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="pictures/eventimage1.jpg" alt="Rows of books in a library" title="Exploring knowledge at the library" class="event-thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/150x100/DDA0DD/FFFFFF?text=Image+Failed';">
+                            <p>Monthly Book Club</p>
+                        </td>
+                        <td>Aug 5, 2024</td>
+                        <td>Community Library</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="pictures/eventimage2.jpg" alt="People cooking and laughing in a bright kitchen" title="Learning to cook new dishes" class="event-thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/150x100/AFEEEE/000000?text=Image+Failed';">
+                            <p>Beginner's Cooking Class</p>
+                        </td>
+                        <td>Sept 1, 2024</td>
+                        <td>Community Kitchen</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="event-list-container">
+                <h3>Freshly Added Events</h3>
+                <p>Just a moment, loading up the good stuff...</p>
+            </div>
+        </section>
+
+        <section id="register">
+            <h2>Ready to Join an Event?</h2>
+            <form id="registrationForm" class="card">
+                <p>Fill out this quick form to reserve your spot.</p>
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="First and Last Name" required autofocus>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+
+                <label for="phone">Phone (like 123-456-7890):</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., 555-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onblur="checkPhoneFormat()">
+                <span id="phone-error" class="error-feedback"></span>
+
+                <label for="eventDate">Best Date for You:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventType">What Kind of Event?</label>
+                <select id="eventType" name="eventType" onchange="updateEventCost()">
+                    <option value="">-- Pick an Event Type --</option>
+                    <option value="workshop">Workshop (Costs: $25)</option>
+                    <option value="seminar">Seminar (Costs: $50)</option>
+                    <option value="webinar">Webinar (Free!)</option>
+                </select>
+                <p class="cost-info">Estimated Cost: <output id="eventCostOutput">$0</output></p>
+
+                <label for="message">Anything Else We Should Know? (Optional):</label>
+                <textarea id="message" name="message" rows="4" placeholder="Dietary needs, questions, etc."></textarea>
+
+                <button type="submit" class="submit-button">Sign Me Up!</button>
+                <p id="registration-status-message" class="info-message"></p>
+            </form>
+        </section>
+
+        <section id="video-invite">
+            <h2>Event Video</h2>
+            <p>Check out this short video about our events.</p>
+            <video id="promoVideo" controls width="100%" oncanplay="showVideoReady()">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser doesn't support the video.
+            </video>
+            <p id="video-load-status" class="info-message"></p>
+        </section>
+
+        <section id="preferences">
+            <h2>Your Event Preferences</h2>
+            <p>Help us show you what you love! Pick your favorite event type.</p>
+            <label for="prefEventType">My Favorite Type Is:</label>
+            <select id="prefEventType" name="prefEventType">
+                <option value="music">Music Events</option>
+                <option value="art">Art & Creativity</option>
+                <option value="food">Food & Cooking</option>
+                <option value="sports">Sports & Outdoors</option>
+                <option value="learning">Learning & Workshops</option>
+            </select>
+            <button onclick="saveMyPreferences()">Save My Preferences</button>
+            <button onclick="clearMyPreferences()" class="clear-button">Clear Saved Preferences</button>
+            <p id="preference-feedback" class="info-message"></p>
+        </section>
+
+        <section id="geolocation">
+            <h2>Events Near Me!</h2>
+            <p>Click the button to find your location and see if there are events close by.</p>
+            <button onclick="findMyLocation()">Show My Location</button>
+            <p id="location-display" class="info-message"></p>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>Got questions or just want to say hi?</p>
+            <address>
+                Email us: <a href="mailto:hello@communityportal.org">hello@communityportal.org</a><br>
+                Call us: <a href="tel:+15551234567">555-123-4567</a><br>
+                Our Spot: 123 Community Lane, Hyderabad, Telangana, India
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Hub. Made with care for our neighbors.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
